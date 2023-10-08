@@ -2,6 +2,8 @@ from dataprocessing.entities import AdultEntities
 import numpy
 
 
+# Todo: Add better check for get_average & get_mean. Column must be numerical.
+# Even if it should be validated by the directive beforehand, any change on this could break the computation.
 def get_average(column_name, adult_entities_array: list[AdultEntities]):
     values = [getattr(column, column_name) for column in adult_entities_array]
     return numpy.average(values)
