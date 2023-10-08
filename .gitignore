@@ -1,0 +1,16 @@
+# IDEs
+.idea
+.vscode/
+
+# osx
+**/.DS_Store
+
+vendor/
+
+#  Local .terraform directories
+/infra/.terraform/
+/infra/.terraform*
+/infra/terraform.tfstate
+/infra/terraform.tfstate.backup
+/infra/test_key.pem
+/infra/api_dns_name.txt
