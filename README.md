@@ -61,6 +61,8 @@ terraform -chdir=infra apply
 chmod 600 infra/test_key.pem   
 
 Wait few minutes for the deployment to be done. The ssh key should be generated into the `infra` folder (`test_key.pem`).
+As we are using user_data with local executor, it may take few minutes to install docker and pull the image before the API is ready to serve data.
+This is something which should be improved (or move to kubernetes).
 
 If you want to log on the EC2 instances, please run : 
 ssh -i infra/test_key.pem ec2-user@{IP_ADDRESS}
