@@ -52,13 +52,13 @@ You should have an AWS account properly configured, the proper rights to generat
 
 Run the following command :
 
-make deploy
+`make deploy`
 
 OR
 
-terraform -chdir=infra init
-terraform -chdir=infra apply
-chmod 600 infra/test_key.pem   
+`terraform -chdir=infra init` <br/>
+`terraform -chdir=infra apply` <br/>
+`chmod 600 infra/test_key.pem` <br/>
 
 Wait few minutes for the deployment to be done. The ssh key should be generated into the `infra` folder (`test_key.pem`).
 As we are using user_data with local executor, it may take few minutes to install docker and pull the image before the API is ready to serve data.
