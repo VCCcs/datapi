@@ -1,4 +1,6 @@
 venv/
 test_main.http
 README.md
-.infra/
+infra/
+Makefile
+.gitignore
