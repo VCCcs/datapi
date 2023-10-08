@@ -71,17 +71,17 @@ The public dns of the load balancer is generated into `infra/api_dns_name.txt`
 To clean resources, run `make destroy`
 
 
+<br/>
+<br/>
 
-
-### Additional questions : 
-
+# Additional questions : 
 
 ## 1 Priorisation et évaluation d'opportunités
 
 La première étape de tout projet Data (quel que soit le domaine, IA/BI/Produit/Analytics ...) est d'identifier de façon claire le problème à résoudre et la valeur que l'on souhaite apporter. Cela peut être une amélioration de la compliance, un gain de temps via automatisation de tâches pénibles et chronophages, le lancement d'un nouveau produit, donner de la visibilité sur un KPI business, etc.
 
 Lorsque le besoin est clairement établi, il convient d'adresser les points suivants : 
-- Avons nous les data nécessaire pour réaliser le projet ?
+- Avons nous les data nécessaires pour réaliser le projet ?
   - Si non, quel serait le coût du projet permettant de les récupérer.
 - Avons nous les technologies ?
 - Avons nous les algorithmes ?
@@ -92,12 +92,12 @@ Lorsque le besoin est clairement établi, il convient d'adresser les points suiv
     
 
 Ces quatre premiers points vont permettre de déterminer le coût d'entrée du projet et le délai minimum associé. 
-Nous pourrions le traduire par : "Faisons nous quelque chose de complètement nouveau VS adaptons nous les connaissances acquises d'un projet précédent à un nouveau use case"
+Nous pourrions le traduire par : *"Faisons nous quelque chose de complètement nouveau VS adaptons nous les connaissances acquises d'un projet précédent à un nouveau use case"*
 
-Le dernier point est la résultante d'une pré-analyse d'ingénieurie/system design pour déterminer sa faisabilité (e.g. s'il faut calculer plusieurs TB en real-time, il y a peu de chances que le projet soit possible en l'état)
+Le dernier point est la résultante d'une pré-analyse d'ingénierie/system design pour déterminer sa faisabilité (e.g. s'il faut calculer plusieurs TB en real-time, il y a peu de chances que le projet soit possible en l'état)
 
 L'étape suivante va consister à réaliser un POC relativement court avec un délai clairement défini, par exemple 2 semaines. Cela va permettre de valider tous les points précédents et, normalement, s'il est possible de générer la valeur attendue.
-A partir des insights de ce POC, il est maintenant possible de bâtir une roadmap autours du projet ou de l'initiative.
+A partir des insights de ce POC, il est maintenant possible de bâtir une roadmap autour du projet ou de l'initiative.
 
 La priorisation pourra ensuite se faire via les critères suivants : 
 - délai et risque de mise en production
@@ -105,7 +105,7 @@ La priorisation pourra ensuite se faire via les critères suivants :
 - gains non business à long terme.
   - Par exemple, si le projet permet, en plus de la valeur business intrinsèque, de débloquer de nouveaux use cases
 
-Idéalement, avant l'étape de global availibility, nous executerons quelques AB/Test pour valider la valeur attendue.
+Idéalement, avant l'étape de global availability, nous exposerons quelques AB/Test pour valider la valeur attendue.
 
 ## 2 : Mesure de l'efficacité
 
@@ -115,7 +115,7 @@ Exemples de KPI Business : User Engagement, Temps pour déposer une annonce, tem
 
 A coupler avec les KPI business globaux de l’entreprise VS les coûts induits par la solution.
 
-Si l’initiative est liée à un produit Data, il convient de lui attribuer des KPI propres, tel que l’engagement des utilisateurs avec cette feature en particulier (e.g. nombre d’utilisation de prompts par user, taux d’analyse des annonces recommandées par les users etc.), qui peuvent être communs à l'ensemble des produits d'Alvo.
+Si l’initiative est liée à un produit Data, il convient de lui attribuer des KPI propres, tel que l’engagement des utilisateurs avec cette feature en particulier (e.g. nombre d’utilisation de prompts par user, taux d’analyse des annonces recommandées par les utilisateurs etc.), qui peuvent être communs à l'ensemble des produits d'Alvo.
 
 Prenons l’exemple de la réalisation automatique des dossiers de M&A.
 
@@ -145,13 +145,13 @@ Ici, nous sommes clairement dans le domaine de l’intuition. Nous avons pensé 
 
 Nous entrons dans le domaine du product analytics. L’objectif est d’analyser le parcours des utilisateurs ayant un match et n’ayant pas particulièrement converti pour comprendre ce qu’il se passe. 
 - Peut être qu’une partie du funnel de conversion est cassé. 
-- Ou alors que les prédictions réalisée ne sont pas celles attendues par les utilisateurs.
+- Ou alors que les prédictions réalisées ne sont pas celles attendues par les utilisateurs.
 - Il se peut aussi que le matchmaking ne soit pas une feature clé de la conversion (dans un 	monde idéal, ce serait quelque chose à analyser avant de lancer toute initiative).
 
-De même, dans le cas des transactions effectuées, il convient d’identifier celles qui sont la résultante d’une recommendation effectuée par les algorithmes. Cela nous donnera des insights (ici, un taux de remplacement naturel, i.d. les utilisateurs n'utilisent pas plus la feature, par contre quand ils l'utilisent ce sont via les recommendations de du modèle d'IA).
+De même, dans le cas des transactions effectuées, il convient d’identifier celles qui sont la résultante d’une recommandation effectuée par les algorithmes. Cela nous donnera des insights (ici, un taux de remplacement naturel, i.d. les utilisateurs n'utilisent pas plus la feature, par contre quand ils l'utilisent ce sont via les recommandations de du modèle d'IA).
 
 Idéalement, des analyses de corrélation et des clustering permettront d’identifier des patterns dans les parcours clients permettant d’identifier le problème.
 
-Enfin, il ne faut pas négliger les interview utilisateurs pour parfaitement comprendre leurs attentes.
+Enfin, il ne faut pas négliger les interviews utilisateurs pour parfaitement comprendre leurs attentes.
 
 
