@@ -83,7 +83,7 @@ resource "aws_eip" "eip" {
 # (for the private subnet to access internet - in our case, downloading the external dataset)
 resource "aws_nat_gateway" "data_nat_for_private_subnet" {
   allocation_id = aws_eip.eip.id
-  subnet_id     = aws_subnet.data_public_subnet.id # nat should be in public subnet
+  subnet_id     = aws_subnet.data_private_subnet.id # nat should be in private subnet
 
   tags = {
     Name = "${var.project_name}-private-NAT"
