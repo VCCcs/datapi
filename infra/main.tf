@@ -20,47 +20,6 @@ resource "null_resource" "docker_packaging" {
 }
 
 
-resource "aws_security_group" "sg" {
-  vpc_id = aws_vpc.data_vpc_main.id
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 8000
-    to_port     = 8000
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
-
-resource "aws_security_group" "lb" {
-  name        = "LB-SG"
-  description = "Allow inbound and outbound traffic to load balancer from the internet."
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  vpc_id = aws_vpc.data_vpc_main.id
-}
 
 
 resource "aws_instance" "api" {
@@ -72,7 +31,7 @@ resource "aws_instance" "api" {
     volume_size = 8
   }
 
-  vpc_security_group_ids = [aws_security_group.sg.id]
+  vpc_security_group_ids = [aws_security_group.ec2-api.id]
   iam_instance_profile   = aws_iam_instance_profile.ec2_profile_alvo_test.name
   subnet_id              = aws_subnet.data_public_subnet.id
 
